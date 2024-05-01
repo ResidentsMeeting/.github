@@ -75,29 +75,8 @@ erDiagram
 ```
 
 ### 서비스 전체 구조 (MSA Architecture)
-```mermaid
-flowchart TD
-    A[Eureka Server]
-    subgraph Eureka Client
-       B[API Gateway]
-       D[User Service]
-       E[Vote Service]
-    end
-    C[Config Server]
-    F[Kafka Consumer & Batch Service]
-    G[(Vote Database)]
-    
-    B -->|서버 등록| A
-    D -->|서버 등록| A
-    E -->|서버 등록| A
-    B -->|요청 전달| D
-    B -->|요청 전달| E
-    D --> |config 처리|C
-    E --> |config 처리|C
-    F --> |config 처리|C
-    E --> |Vote 저장과 관련된 event 전달 | F
-    F --> G
-```
+![아키텍처](https://github.com/ResidentsMeeting/.github/assets/84146296/a824daec-2bc9-4ed0-b4c9-1ee0848ebe5d)
+
 - 장점
   - 각 서비스들이 독립적으로 동작하기 때문에 서비스의 확장성이 높다.
   - 각 서비스들이 독립적으로 동작하기 때문에 서비스의 장애가 전체 서비스에 영향을 미치지 않는다.
