@@ -31,13 +31,12 @@
     2. 한 세대당 한 사람이 세대주로 등록이 되며 세대원간의 만장 일치로 세대주를 변경할 수 있다.
     3. 이사 등으로 위치를 변경할 수 있으며 우편물 방송을 신청하여 우편물에 지정된 코드를 입력하면 기존 세대주들이 등록해제 된다. (기간은 한달에 한번 신청 가능)
 
-### MICROSERVICE 구성
-1. EUREKA SERVER (Residents Meeting - 가장 바깥 프로젝트)
-2. API GATEWAY 
-3. CONFIG SERVER
-4. USER SERVICE
-5. VOTE SERVICE (Spring Webflux)
-6. KAFKA CONSUMER & BATCH SERVICE
+### Repository 구성
+1. API GATEWAY 
+2. USER SERVICE
+3. VOTE SERVICE (Spring Webflux)
+4. KAFKA CONSUMER & BATCH SERVICE
++ 5. 각 Service 들을 Kubernetess 로 배포하기 위해 Kubernetes 설정 정보를 만들어둔 repo
 
 ### ERD
 ```mermaid
